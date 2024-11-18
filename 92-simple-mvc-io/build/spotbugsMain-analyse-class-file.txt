@@ -1,0 +1,3 @@
+C:\Esercizzi_OOP\lab09\92-simple-mvc-io\build\classes\java\main\it\unibo\mvc\Controller.class
+C:\Esercizzi_OOP\lab09\92-simple-mvc-io\build\classes\java\main\it\unibo\mvc\SimpleGUI.class
+C:\Esercizzi_OOP\lab09\92-simple-mvc-io\build\classes\java\main\it\unibo\mvc\SimpleGUIWithFileChooser.class

@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.List;
+import java.nio.file.Path;
 import java.util.Random;
 
 /**
@@ -41,8 +41,34 @@ public class BadIOGUI {
     public BadIOGUI() {
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
+        final JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.X_AXIS));
+
         final JButton write = new JButton("Write on file");
-        canvas.add(write, BorderLayout.CENTER);
+        final JButton read = new JButton("read");
+        read.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(final ActionEvent e) {
+
+                System.out.println("Prova stampa"); // NOPMD: allowed as this is just an exercise
+
+                try {
+                    for (final String s : Files.readAllLines(Path.of(PATH), StandardCharsets.UTF_8)) {
+                        System.out.println(s); // NOPMD: allowed as this is just an exercise
+
+                    }
+                } catch (IOException ev) {
+                    System.out.println("Errore"); // NOPMD: allowed as this is just an exercise
+                }
+
+            }
+
+        });
+        canvas.add(centerPanel, BorderLayout.CENTER);
+        centerPanel.add(write, BorderLayout.CENTER);
+        centerPanel.add(read, BorderLayout.CENTER);
+        // canvas.add(write, BorderLayout.CENTER);
         frame.setContentPane(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
@@ -81,6 +107,7 @@ public class BadIOGUI {
         final int sw = (int) screen.getWidth();
         final int sh = (int) screen.getHeight();
         frame.setSize(sw / PROPORTION, sh / PROPORTION);
+        frame.pack();
         /*
          * Instead of appearing at (0,0), upper left corner of the screen, this
          * flag makes the OS window manager take care of the default positioning
@@ -99,6 +126,6 @@ public class BadIOGUI {
      * @param args ignored
      */
     public static void main(final String... args) {
-       new BadIOGUI().display();
+        new BadIOGUI().display();
     }
 }
