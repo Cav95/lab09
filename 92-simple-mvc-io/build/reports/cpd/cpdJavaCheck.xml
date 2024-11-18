@@ -2,13 +2,13 @@
 <pmd-cpd xmlns="https://pmd-code.org/schema/cpd-report"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          pmdVersion="7.7.0"
-         timestamp="2024-11-18T12:12:21.0275312+01:00"
+         timestamp="2024-11-18T22:33:35.777418+01:00"
          version="1.0.0"
          xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd">
    <file path="C:\Esercizzi_OOP\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\Controller.java"
          totalNumberOfTokens="156"/>
    <file path="C:\Esercizzi_OOP\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUI.java"
-         totalNumberOfTokens="47"/>
+         totalNumberOfTokens="400"/>
    <file path="C:\Esercizzi_OOP\lab09\92-simple-mvc-io\src\main\java\it\unibo\mvc\SimpleGUIWithFileChooser.java"
-         totalNumberOfTokens="15"/>
+         totalNumberOfTokens="20"/>
 </pmd-cpd>

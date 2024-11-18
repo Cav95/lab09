@@ -9,6 +9,7 @@ import javax.swing.JFrame;
  */
 public final class SimpleGUIWithFileChooser {
 
+    @SuppressWarnings("unused")
     private final JFrame frame = new JFrame();
 
 }

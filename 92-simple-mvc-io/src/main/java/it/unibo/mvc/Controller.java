@@ -10,8 +10,8 @@ import java.io.IOException;
  * Application controller. Performs the I/O.
  */
 public class Controller {
-    private final static String SEP = System.getProperty("file.separator");
-    private final static String PATH = System.getProperty("user.home") + SEP + "output.txt";
+    private static final String SEP = System.getProperty("file.separator");
+    private static final String PATH = System.getProperty("user.home") + SEP + "output.txt";
 
     private File myFile;
 
@@ -62,13 +62,12 @@ public class Controller {
     public void writeOnFile(final String text) {
 
         try (
-             DataOutputStream dbstrem = new DataOutputStream(
-                    new BufferedOutputStream(
-                            new FileOutputStream(myFile)))
-        ) {
-            dbstrem.writeUTF(text);            
+                DataOutputStream dbstrem = new DataOutputStream(
+                        new BufferedOutputStream(
+                                new FileOutputStream(myFile)))) {
+            dbstrem.writeUTF(text);
         } catch (IOException e) {
-            System.out.println("Errore");
+            System.out.println("Errore"); // NOPMD suppressed as it is a false positive
         }
     }
 
